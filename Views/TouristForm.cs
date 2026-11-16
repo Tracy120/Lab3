@@ -1,4 +1,4 @@
-https://github.com/Tracy120/Lab3.gitusing Lab3.Controllers;
+using Lab3.Controllers;
 using Lab3.Models;
 
 namespace Lab3.Views;
