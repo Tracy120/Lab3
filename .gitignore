@@ -1,0 +1,15 @@
+# Visual Studio user/cache files
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Test and coverage output
+TestResults/
+coverage/
+
+# Local environment files
+.env
