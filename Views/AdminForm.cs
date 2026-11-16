@@ -125,4 +125,9 @@ public sealed partial class AdminForm : Form
         File.WriteAllLines(dialog.FileName, new[] { "Tour,BookedSeats,Capacity,Revenue" }.Concat(rows.Select(row => $"{row.TourName},{row.BookedSeats},{row.Capacity},{row.Revenue}")));
         MessageBox.Show("Report exported.", "Reports", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
+
+    private void users_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

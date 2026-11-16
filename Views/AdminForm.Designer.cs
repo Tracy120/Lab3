@@ -25,6 +25,15 @@ public sealed partial class AdminForm
         toursPage = new TabPage();
         toursTitle = new Label();
         existingToursTitle = new Label();
+        tourNameLabel = new Label();
+        descriptionLabel = new Label();
+        destinationLabel = new Label();
+        newDestinationLabel = new Label();
+        countryLabel = new Label();
+        startLabel = new Label();
+        endLabel = new Label();
+        priceLabel = new Label();
+        capacityLabel = new Label();
         tours = new ListBox();
         tourName = new TextBox();
         description = new TextBox();
@@ -54,7 +63,6 @@ public sealed partial class AdminForm
         toggleRoleButton = new Button();
         reportsPage = new TabPage();
         reportsTitle = new Label();
-        tourNameLabel = new Label(); descriptionLabel = new Label(); destinationLabel = new Label(); newDestinationLabel = new Label(); countryLabel = new Label(); startLabel = new Label(); endLabel = new Label(); priceLabel = new Label(); capacityLabel = new Label();
         report = new ListBox();
         refreshReportButton = new Button();
         exportButton = new Button();
@@ -134,22 +142,94 @@ public sealed partial class AdminForm
         existingToursTitle.Size = new Size(204, 40);
         existingToursTitle.TabIndex = 1;
         existingToursTitle.Text = "Existing tours";
-        tourNameLabel.AutoSize = true; tourNameLabel.Location = new Point(20, 68); tourNameLabel.Name = "tourNameLabel"; tourNameLabel.Text = "Tour name";
-        descriptionLabel.AutoSize = true; descriptionLabel.Location = new Point(20, 108); descriptionLabel.Name = "descriptionLabel"; descriptionLabel.Text = "Description";
-        destinationLabel.AutoSize = true; destinationLabel.Location = new Point(20, 148); destinationLabel.Name = "destinationLabel"; destinationLabel.Text = "Destination";
-        newDestinationLabel.AutoSize = true; newDestinationLabel.Location = new Point(20, 188); newDestinationLabel.Name = "newDestinationLabel"; newDestinationLabel.Text = "New destination";
-        countryLabel.AutoSize = true; countryLabel.Location = new Point(20, 228); countryLabel.Name = "countryLabel"; countryLabel.Text = "Country";
-        startLabel.AutoSize = true; startLabel.Location = new Point(20, 268); startLabel.Name = "startLabel"; startLabel.Text = "Start date";
-        endLabel.AutoSize = true; endLabel.Location = new Point(20, 308); endLabel.Name = "endLabel"; endLabel.Text = "End date";
-        priceLabel.AutoSize = true; priceLabel.Location = new Point(20, 348); priceLabel.Name = "priceLabel"; priceLabel.Text = "Price";
-        capacityLabel.AutoSize = true; capacityLabel.Location = new Point(300, 348); capacityLabel.Name = "capacityLabel"; capacityLabel.Text = "Capacity";
+        // 
+        // tourNameLabel
+        // 
+        tourNameLabel.AutoSize = true;
+        tourNameLabel.Location = new Point(20, 68);
+        tourNameLabel.Name = "tourNameLabel";
+        tourNameLabel.Size = new Size(79, 20);
+        tourNameLabel.TabIndex = 2;
+        tourNameLabel.Text = "Tour name";
+        // 
+        // descriptionLabel
+        // 
+        descriptionLabel.AutoSize = true;
+        descriptionLabel.Location = new Point(20, 108);
+        descriptionLabel.Name = "descriptionLabel";
+        descriptionLabel.Size = new Size(85, 20);
+        descriptionLabel.TabIndex = 3;
+        descriptionLabel.Text = "Description";
+        // 
+        // destinationLabel
+        // 
+        destinationLabel.AutoSize = true;
+        destinationLabel.Location = new Point(20, 148);
+        destinationLabel.Name = "destinationLabel";
+        destinationLabel.Size = new Size(85, 20);
+        destinationLabel.TabIndex = 4;
+        destinationLabel.Text = "Destination";
+        // 
+        // newDestinationLabel
+        // 
+        newDestinationLabel.AutoSize = true;
+        newDestinationLabel.Location = new Point(20, 188);
+        newDestinationLabel.Name = "newDestinationLabel";
+        newDestinationLabel.Size = new Size(117, 20);
+        newDestinationLabel.TabIndex = 5;
+        newDestinationLabel.Text = "New destination";
+        // 
+        // countryLabel
+        // 
+        countryLabel.AutoSize = true;
+        countryLabel.Location = new Point(20, 228);
+        countryLabel.Name = "countryLabel";
+        countryLabel.Size = new Size(60, 20);
+        countryLabel.TabIndex = 6;
+        countryLabel.Text = "Country";
+        // 
+        // startLabel
+        // 
+        startLabel.AutoSize = true;
+        startLabel.Location = new Point(20, 268);
+        startLabel.Name = "startLabel";
+        startLabel.Size = new Size(74, 20);
+        startLabel.TabIndex = 7;
+        startLabel.Text = "Start date";
+        // 
+        // endLabel
+        // 
+        endLabel.AutoSize = true;
+        endLabel.Location = new Point(20, 308);
+        endLabel.Name = "endLabel";
+        endLabel.Size = new Size(68, 20);
+        endLabel.TabIndex = 8;
+        endLabel.Text = "End date";
+        // 
+        // priceLabel
+        // 
+        priceLabel.AutoSize = true;
+        priceLabel.Location = new Point(20, 348);
+        priceLabel.Name = "priceLabel";
+        priceLabel.Size = new Size(41, 20);
+        priceLabel.TabIndex = 9;
+        priceLabel.Text = "Price";
+        // 
+        // capacityLabel
+        // 
+        capacityLabel.AutoSize = true;
+        capacityLabel.Location = new Point(300, 348);
+        capacityLabel.Name = "capacityLabel";
+        capacityLabel.Size = new Size(66, 20);
+        capacityLabel.TabIndex = 10;
+        capacityLabel.Text = "Capacity";
         // 
         // tours
         // 
         tours.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        tours.Location = new Point(565, 58);
+        tours.Location = new Point(590, 68);
         tours.Name = "tours";
-        tours.Size = new Size(1380, 1104);
+        tours.Size = new Size(456, 344);
         tours.TabIndex = 2;
         // 
         // tourName
@@ -353,10 +433,11 @@ public sealed partial class AdminForm
         // users
         // 
         users.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        users.Location = new Point(18, 58);
+        users.Location = new Point(3, 61);
         users.Name = "users";
-        users.Size = new Size(1660, 1104);
+        users.Size = new Size(755, 324);
         users.TabIndex = 1;
+        users.SelectedIndexChanged += users_SelectedIndexChanged;
         // 
         // activateButton
         // 
@@ -411,9 +492,9 @@ public sealed partial class AdminForm
         // report
         // 
         report.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        report.Location = new Point(18, 58);
+        report.Location = new Point(30, 61);
         report.Name = "report";
-        report.Size = new Size(1660, 1104);
+        report.Size = new Size(710, 384);
         report.TabIndex = 1;
         // 
         // refreshReportButton
